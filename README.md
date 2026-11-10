@@ -1,49 +1,51 @@
 # Shopping (Java)
 
-Sistema de um shopping center feito em Java para praticar **programação orientada a objetos**: classes, encapsulamento, construtores sobrecarregados, herança, polimorfismo e arrays de objetos.
+A shopping mall system written in Java to practice **object-oriented programming**: classes, encapsulation, overloaded constructors, inheritance, polymorphism and arrays of objects.
 
-Projeto da disciplina de Laboratório I (Unisinos).
+Course project for Laboratory I (Unisinos).
 
-## O que o sistema modela
+## What the system models
 
-Um `Shopping` tem um endereço e um conjunto de lojas. Cada `Loja` tem funcionários, endereço, data de fundação e um estoque de produtos.
+A `Shopping` has an address and a set of stores. Each `Loja` (store) has employees, an address, a founding date and a stock of products.
 
 ```
-Shopping ── tem várias ──> Loja ── tem vários ──> Produto
-                            │
-                            ├── Alimentacao   (data do alvará)
-                            ├── Bijuteria     (meta de vendas)
-                            ├── Cosmetico     (taxa de comercialização)
-                            ├── Informatica   (seguro dos eletrônicos)
-                            └── Vestuario     (produtos importados ou não)
+Shopping ── has many ──> Loja ── has many ──> Produto
+                          │
+                          ├── Alimentacao   (food: permit date)
+                          ├── Bijuteria     (jewelry: sales target)
+                          ├── Cosmetico     (cosmetics: sales fee)
+                          ├── Informatica   (electronics: equipment insurance)
+                          └── Vestuario     (clothing: imported products or not)
 
-Endereco e Data são usadas por Shopping, Loja e Produto.
+Endereco (address) and Data (date) are used by Shopping, Loja and Produto.
 ```
+
+The class and method names are in Portuguese, as required by the course.
 
 ## Classes
 
-| Classe | Papel |
+| Class | Role |
 | --- | --- |
-| `Shopping` | Guarda as lojas em um array. Insere e remove lojas, conta lojas por tipo e encontra a loja de informática com o seguro mais caro. |
-| `Loja` | Classe base. Calcula gastos com salário, classifica o tamanho da loja, insere, remove e lista produtos. Tem três construtores. |
-| `Alimentacao`, `Bijuteria`, `Cosmetico`, `Informatica`, `Vestuario` | Tipos de loja que herdam de `Loja` e acrescentam um atributo próprio. |
-| `Produto` | Nome, preço e data de validade. |
-| `Endereco` | Rua, número, complemento, cidade, estado, país e CEP. |
-| `Data` | Dia, mês e ano, com validação (inclusive dias de cada mês). |
+| `Shopping` | Keeps the stores in an array. Adds and removes stores, counts stores by type and finds the electronics store with the highest insurance. |
+| `Loja` | Base class. Calculates salary costs, classifies the store size, and adds, removes and lists products. Has three constructors. |
+| `Alimentacao`, `Bijuteria`, `Cosmetico`, `Informatica`, `Vestuario` | Store types that extend `Loja` and add one attribute of their own. |
+| `Produto` | Name, price and expiration date. |
+| `Endereco` | Street, number, complement, city, state, country and postal code. |
+| `Data` | Day, month and year, with validation (including the number of days in each month). |
 
-## Como compilar
+## How to compile
 
-Precisa do JDK instalado. Na pasta do projeto:
+Requires the JDK. From the project folder:
 
 ```
 javac -d out src/*.java
 ```
 
-Os arquivos `.class` vão para a pasta `out`. O projeto tem apenas as classes do modelo e não tem uma classe `main`, então para ver tudo funcionando é preciso criar uma classe de teste que instancie um `Shopping` e algumas lojas.
+The `.class` files are written to the `out` folder. The project contains only the model classes and has no `main` class, so to see everything working you need to write a small test class that creates a `Shopping` and a few stores.
 
-## O que eu pratiquei
+## What I practiced
 
-- Dividir um problema em classes com responsabilidades claras
-- Herança e `instanceof` para tratar tipos diferentes de loja
-- Validação de dados na própria classe (`Data`)
-- Trabalhar com arrays de objetos
+- Splitting a problem into classes with clear responsibilities
+- Inheritance and `instanceof` to handle different types of stores
+- Validating data inside the class itself (`Data`)
+- Working with arrays of objects
