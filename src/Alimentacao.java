@@ -1,0 +1,33 @@
+public class Alimentacao extends Loja {
+    private Data dataAlvara;
+
+    public Alimentacao(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario,
+    Endereco endereco, Data dataFundacao, Data dataAlvara, int capacidadeEstoqueProdutos) {
+super(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, dataFundacao, capacidadeEstoqueProdutos);
+this.dataAlvara = dataAlvara;
+    
+}
+//Get e Set
+
+public Data getDataAlvara (){
+    return dataAlvara;
+}
+
+public void setDataAlvara (Data dataAlvara){
+    this.dataAlvara = dataAlvara;
+}
+
+//método to string
+
+@Override
+public String toString() {
+    return "Alimentacao{" +
+            "nome='" + getNome() + '\'' +
+            ", quantidadeFuncionarios=" + getQuantidadeFuncionarios() +
+            ", salarioBaseFuncionario=" + getSalarioBaseFuncionario() +
+            ", endereco=" + getEndereco() +
+            ", dataFundacao=" + getDataFundacao() +
+            ", dataAlvara=" + dataAlvara +
+            '}';
+}
+}

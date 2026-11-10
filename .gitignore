@@ -1,0 +1,13 @@
+# Arquivos gerados pela compilação
+*.class
+bin/
+out/
+
+# Editores e IDEs
+.vscode/
+.idea/
+*.iml
+
+# Sistema
+.DS_Store
+Thumbs.db
